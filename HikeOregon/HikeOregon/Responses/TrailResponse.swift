@@ -12,9 +12,10 @@ struct TrailResponse: Response {
   let trails: [Trail]
   let error: APIError?
   
-  init(from json: [[String: AnyObject]]) {
+  init(from json: [String: AnyObject]) {
+    let trailsJson = json["trails"] as! [[String: AnyObject]]
     var trails = [Trail]()
-    for trail in json {
+    for trail in trailsJson {
       let newTrail = Trail(from: trail)
       if let newTrail = newTrail {
         trails.append(newTrail)

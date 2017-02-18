@@ -31,6 +31,11 @@
 		0835FAC71E58DA600029D9F0 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAC61E58DA600029D9F0 /* Parameter.swift */; };
 		0835FACA1E58DDC00029D9F0 /* Dictionary+HikeOregon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAC91E58DDC00029D9F0 /* Dictionary+HikeOregon.swift */; };
 		0835FACC1E58DFDE0029D9F0 /* String+HikeOregon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FACB1E58DFDE0029D9F0 /* String+HikeOregon.swift */; };
+		0835FACE1E58E56A0029D9F0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FACD1E58E56A0029D9F0 /* Endpoints.swift */; };
+		0835FAD11E58E9440029D9F0 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAD01E58E9440029D9F0 /* Responses.swift */; };
+		0835FAD41E58EA120029D9F0 /* ResponseTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAD31E58EA120029D9F0 /* ResponseTestHelper.swift */; };
+		0835FAD61E58EB1D0029D9F0 /* RequestTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAD51E58EB1D0029D9F0 /* RequestTestHelper.swift */; };
+		0835FADA1E58ED570029D9F0 /* TrailRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAD91E58ED570029D9F0 /* TrailRequestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,11 @@
 		0835FAC61E58DA600029D9F0 /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parameter.swift; path = Parameters/Parameter.swift; sourceTree = "<group>"; };
 		0835FAC91E58DDC00029D9F0 /* Dictionary+HikeOregon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+HikeOregon.swift"; path = "Extensions/Dictionary+HikeOregon.swift"; sourceTree = "<group>"; };
 		0835FACB1E58DFDE0029D9F0 /* String+HikeOregon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+HikeOregon.swift"; path = "Extensions/String+HikeOregon.swift"; sourceTree = "<group>"; };
+		0835FACD1E58E56A0029D9F0 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Endpoints.swift; path = Requests/Endpoints.swift; sourceTree = "<group>"; };
+		0835FAD01E58E9440029D9F0 /* Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Responses.swift; path = DependencyInjections/Responses.swift; sourceTree = "<group>"; };
+		0835FAD31E58EA120029D9F0 /* ResponseTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseTestHelper.swift; path = Responses/ResponseTestHelper.swift; sourceTree = "<group>"; };
+		0835FAD51E58EB1D0029D9F0 /* RequestTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestTestHelper.swift; path = Requests/RequestTestHelper.swift; sourceTree = "<group>"; };
+		0835FAD91E58ED570029D9F0 /* TrailRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailRequestTests.swift; path = Requests/TrailRequestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +158,7 @@
 		0835FA7F1E58B30F0029D9F0 /* HikeOregonTests */ = {
 			isa = PBXGroup;
 			children = (
+				0835FAD21E58E98F0029D9F0 /* Responses */,
 				0835FAAD1E58C2140029D9F0 /* Requests */,
 				0835FAA71E58BFFD0029D9F0 /* NetworkMocks */,
 				0835FAA01E58B93C0029D9F0 /* DependencyInjections */,
@@ -187,6 +198,7 @@
 		0835FAA01E58B93C0029D9F0 /* DependencyInjections */ = {
 			isa = PBXGroup;
 			children = (
+				0835FACF1E58E8FB0029D9F0 /* Base64Encoded */,
 				0835FAA11E58B9450029D9F0 /* Dictionaries */,
 			);
 			name = DependencyInjections;
@@ -227,6 +239,8 @@
 		0835FAAD1E58C2140029D9F0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				0835FAD51E58EB1D0029D9F0 /* RequestTestHelper.swift */,
+				0835FAD91E58ED570029D9F0 /* TrailRequestTests.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -247,6 +261,7 @@
 				0835FAC31E58D9F10029D9F0 /* Parameters */,
 				0835FAB01E58C2570029D9F0 /* TrailRequest.swift */,
 				0835FAB21E58C36A0029D9F0 /* Request.swift */,
+				0835FACD1E58E56A0029D9F0 /* Endpoints.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -286,6 +301,22 @@
 				0835FACB1E58DFDE0029D9F0 /* String+HikeOregon.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		0835FACF1E58E8FB0029D9F0 /* Base64Encoded */ = {
+			isa = PBXGroup;
+			children = (
+				0835FAD01E58E9440029D9F0 /* Responses.swift */,
+			);
+			name = Base64Encoded;
+			sourceTree = "<group>";
+		};
+		0835FAD21E58E98F0029D9F0 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				0835FAD31E58EA120029D9F0 /* ResponseTestHelper.swift */,
+			);
+			name = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,6 +458,7 @@
 			files = (
 				0835FA6E1E58B30E0029D9F0 /* ViewController.swift in Sources */,
 				0835FAC21E58CAFF0029D9F0 /* TrailResponse.swift in Sources */,
+				0835FACE1E58E56A0029D9F0 /* Endpoints.swift in Sources */,
 				0835FAAC1E58C0D40029D9F0 /* HTTPClient.swift in Sources */,
 				0835FA9B1E58B34A0029D9F0 /* Trail.swift in Sources */,
 				0835FAC51E58DA080029D9F0 /* TrailRequestParameters.swift in Sources */,
@@ -448,9 +480,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0835FAD11E58E9440029D9F0 /* Responses.swift in Sources */,
 				0835FA9E1E58B8E10029D9F0 /* TrailModelTests.swift in Sources */,
+				0835FADA1E58ED570029D9F0 /* TrailRequestTests.swift in Sources */,
+				0835FAD61E58EB1D0029D9F0 /* RequestTestHelper.swift in Sources */,
 				0835FAA91E58C0280029D9F0 /* NetworkMockObjects.swift in Sources */,
 				0835FAA41E58B97E0029D9F0 /* TrailModelDictionaries.swift in Sources */,
+				0835FAD41E58EA120029D9F0 /* ResponseTestHelper.swift in Sources */,
 				0835FA811E58B30F0029D9F0 /* HikeOregonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

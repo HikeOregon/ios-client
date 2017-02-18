@@ -8,22 +8,22 @@
 
 import Foundation
 
-let endpoint = "http://bobbyesh.pythonanywhere.com/api/trails/";
-
 struct TrailRequest: Request {
   typealias ResponseType = TrailResponse
 
   let parameters: [String : String]
   let endpoint: String
+  let session: HTTPClient
   
-  init(searchFor search: TrailSearchParameter? = nil) {
+  init(searchFor search: TrailSearchParameter? = nil, session: HTTPClient = HTTPClient.sharedClient) {
     var parameters = [String: String]()
     if let search = search {
       parameters.insertParameter(search)
     }
     
     self.parameters = parameters
-    self.endpoint = "http://bobbyesh.pythonanywhere.com/api/trails/"
+    self.endpoint = Endpoint.trails
+    self.session = session
   }
 }
 
@@ -33,10 +33,12 @@ struct TrailIdRequest: Request {
   let id: Int
   let parameters: [String : String]
   let endpoint: String
+  let session: HTTPClient
   
-  init(forId id: Int) {
+  init(forId id: Int, session: HTTPClient = HTTPClient.sharedClient) {
     self.id = id
     self.parameters = [String: String]()
-    self.endpoint = "http://bobbyesh.pythonanywhere.com/api/trails/\(self.id)"
+    self.endpoint = "\(Endpoint.trails)\(self.id)"
+    self.session = session
   }
 }

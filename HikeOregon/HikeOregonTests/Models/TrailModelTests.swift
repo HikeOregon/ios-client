@@ -27,7 +27,7 @@ class TrailModelTests: XCTestCase {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
-    let _eagleCreek = Trail(fromDict: TrailDictionaries.eagleCreek);
+    let _eagleCreek = Trail(from: TrailDictionaries.eagleCreek);
     XCTAssertNotNil(_eagleCreek);
     let eagleCreek = _eagleCreek!;
     
@@ -36,12 +36,12 @@ class TrailModelTests: XCTestCase {
     XCTAssertEqual(eagleCreek.location.coordinate.latitude, 52.0);
     XCTAssertEqual(eagleCreek.location.coordinate.longitude, -23.0);
     XCTAssertEqual(eagleCreek.length, 15.9);
-    XCTAssertEqual(eagleCreek.difficulty, .Three);
+    XCTAssertEqual(eagleCreek.difficulty, .three)
     XCTAssertEqual(eagleCreek.hasRestroom, false);
   }
   
   func test_ParseFromInvalidDictionary_ReturnsNil() {
-    let invalid = Trail(fromDict: TrailDictionaries.invalidDict);
+    let invalid = Trail(from: TrailDictionaries.invalidDict);
     XCTAssertNil(invalid);
   }
 }

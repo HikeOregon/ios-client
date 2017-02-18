@@ -35,3 +35,7 @@ class MockURLSessionDataTask: URLSessionDataTaskProtocol {
     resumeWasCalled = true
   }
 }
+
+struct MockRequest: Request {
+  typealias ResponseType = AnyObject
+}

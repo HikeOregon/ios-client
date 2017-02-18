@@ -15,16 +15,10 @@ protocol Request {
   var parameters: [String: String] { get }
   var session: HTTPClient { get }
   
-  func generateURLRequest() -> URLRequest?;
-  
   func send(completionHandler handler: @escaping (_ response: Self.ResponseType?, _ error: APIError?) -> Void);
 }
 
 extension Request {
-  var session: HTTPClient {
-    return HTTPClient.sharedClient
-  }
-  
   func send(completionHandler handler: @escaping (_ response: Self.ResponseType?, _ error: APIError?) -> Void) {
     guard let urlRequest = self.generateURLRequest() else {
       handler(nil, RequestError.failedToGenerate)
@@ -63,8 +57,7 @@ extension Request {
     }
   }
   
-  func generateURLRequest() -> URLRequest? {
-    //let urlString = endpoint//.appending("\(self.id)")
+  private func generateURLRequest() -> URLRequest? {
     let parameterString = self.parameters.httpParameters()
     guard let url = URL(string: "\(self.endpoint)?\(parameterString)") else {
       return nil

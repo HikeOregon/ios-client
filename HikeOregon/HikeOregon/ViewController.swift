@@ -23,6 +23,16 @@ class ViewController: UIViewController {
         print("RESPONSE NOT PARSED")
       }
     }
+    
+    let idRequest = TrailIdRequest(forId: 1)
+    idRequest.send {(response, error) in
+      if let response = response {
+        print(response.trails)
+      }
+      else {
+        print("ID RESPONSE NOT PARSED")
+      }
+    }
   }
 
   override func didReceiveMemoryWarning() {

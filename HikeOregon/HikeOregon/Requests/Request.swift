@@ -11,6 +11,8 @@ import Foundation
 protocol Request {
   associatedtype ResponseType: Response;
   
+  var endpoint: String { get }
+  var parameters: [String: String] { get }
   var session: HTTPClient { get }
   
   func generateURLRequest() -> URLRequest?;
@@ -59,5 +61,14 @@ extension Request {
       finalResponse = response;
       finalError = response.error;
     }
+  }
+  
+  func generateURLRequest() -> URLRequest? {
+    //let urlString = endpoint//.appending("\(self.id)")
+    let parameterString = self.parameters.httpParameters()
+    guard let url = URL(string: "\(self.endpoint)?\(parameterString)") else {
+      return nil
+    }
+    return URLRequest(url: url)
   }
 }

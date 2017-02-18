@@ -27,6 +27,10 @@
 		0835FABC1E58C7DB0029D9F0 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FABB1E58C7DB0029D9F0 /* RequestError.swift */; };
 		0835FABF1E58C9100029D9F0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FABE1E58C9100029D9F0 /* Response.swift */; };
 		0835FAC21E58CAFF0029D9F0 /* TrailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAC11E58CAFF0029D9F0 /* TrailResponse.swift */; };
+		0835FAC51E58DA080029D9F0 /* TrailRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAC41E58DA080029D9F0 /* TrailRequestParameters.swift */; };
+		0835FAC71E58DA600029D9F0 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAC61E58DA600029D9F0 /* Parameter.swift */; };
+		0835FACA1E58DDC00029D9F0 /* Dictionary+HikeOregon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAC91E58DDC00029D9F0 /* Dictionary+HikeOregon.swift */; };
+		0835FACC1E58DFDE0029D9F0 /* String+HikeOregon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FACB1E58DFDE0029D9F0 /* String+HikeOregon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		0835FABB1E58C7DB0029D9F0 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		0835FABE1E58C9100029D9F0 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Responses/Response.swift; sourceTree = "<group>"; };
 		0835FAC11E58CAFF0029D9F0 /* TrailResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailResponse.swift; path = Responses/TrailResponse.swift; sourceTree = "<group>"; };
+		0835FAC41E58DA080029D9F0 /* TrailRequestParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailRequestParameters.swift; path = Parameters/TrailRequestParameters.swift; sourceTree = "<group>"; };
+		0835FAC61E58DA600029D9F0 /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parameter.swift; path = Parameters/Parameter.swift; sourceTree = "<group>"; };
+		0835FAC91E58DDC00029D9F0 /* Dictionary+HikeOregon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+HikeOregon.swift"; path = "Extensions/Dictionary+HikeOregon.swift"; sourceTree = "<group>"; };
+		0835FACB1E58DFDE0029D9F0 /* String+HikeOregon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+HikeOregon.swift"; path = "Extensions/String+HikeOregon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 		0835FA6A1E58B30E0029D9F0 /* HikeOregon */ = {
 			isa = PBXGroup;
 			children = (
+				0835FAC81E58DDAC0029D9F0 /* Extensions */,
 				0835FAAE1E58C22C0029D9F0 /* Network */,
 				0835FAAA1E58C0C10029D9F0 /* Utilities */,
 				0835FA991E58B3170029D9F0 /* Models */,
@@ -235,6 +244,7 @@
 		0835FAAF1E58C23C0029D9F0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				0835FAC31E58D9F10029D9F0 /* Parameters */,
 				0835FAB01E58C2570029D9F0 /* TrailRequest.swift */,
 				0835FAB21E58C36A0029D9F0 /* Request.swift */,
 			);
@@ -258,6 +268,24 @@
 				0835FAC11E58CAFF0029D9F0 /* TrailResponse.swift */,
 			);
 			name = Responses;
+			sourceTree = "<group>";
+		};
+		0835FAC31E58D9F10029D9F0 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				0835FAC41E58DA080029D9F0 /* TrailRequestParameters.swift */,
+				0835FAC61E58DA600029D9F0 /* Parameter.swift */,
+			);
+			name = Parameters;
+			sourceTree = "<group>";
+		};
+		0835FAC81E58DDAC0029D9F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0835FAC91E58DDC00029D9F0 /* Dictionary+HikeOregon.swift */,
+				0835FACB1E58DFDE0029D9F0 /* String+HikeOregon.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +429,8 @@
 				0835FAC21E58CAFF0029D9F0 /* TrailResponse.swift in Sources */,
 				0835FAAC1E58C0D40029D9F0 /* HTTPClient.swift in Sources */,
 				0835FA9B1E58B34A0029D9F0 /* Trail.swift in Sources */,
+				0835FAC51E58DA080029D9F0 /* TrailRequestParameters.swift in Sources */,
+				0835FAC71E58DA600029D9F0 /* Parameter.swift in Sources */,
 				0835FA6C1E58B30E0029D9F0 /* AppDelegate.swift in Sources */,
 				0835FAB31E58C36A0029D9F0 /* Request.swift in Sources */,
 				0835FAB11E58C2570029D9F0 /* TrailRequest.swift in Sources */,
@@ -408,7 +438,9 @@
 				0835FABF1E58C9100029D9F0 /* Response.swift in Sources */,
 				0835FAA61E58BD570029D9F0 /* Model.swift in Sources */,
 				0835FAB61E58C65A0029D9F0 /* ResponseError.swift in Sources */,
+				0835FACA1E58DDC00029D9F0 /* Dictionary+HikeOregon.swift in Sources */,
 				0835FAB81E58C6C70029D9F0 /* APIError.swift in Sources */,
+				0835FACC1E58DFDE0029D9F0 /* String+HikeOregon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

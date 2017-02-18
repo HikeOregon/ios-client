@@ -10,22 +10,33 @@ import Foundation
 
 let endpoint = "http://bobbyesh.pythonanywhere.com/api/trails/";
 
-struct TrailRequest {
-  let id: Int;
+struct TrailRequest: Request {
+  typealias ResponseType = TrailResponse
+
+  let parameters: [String : String]
+  let endpoint: String
   
-  init(forId id: Int) {
-    self.id = id;
+  init(searchFor search: TrailSearchParameter? = nil) {
+    var parameters = [String: String]()
+    if let search = search {
+      parameters.insertParameter(search)
+    }
+    
+    self.parameters = parameters
+    self.endpoint = "http://bobbyesh.pythonanywhere.com/api/trails/"
   }
 }
 
-extension TrailRequest: Request {
+struct TrailIdRequest: Request {
   typealias ResponseType = TrailResponse
   
-  func generateURLRequest() -> URLRequest? {
-    let urlString = endpoint//.appending("\(self.id)")
-    guard let url = URL(string: urlString) else {
-      return nil
-    }
-    return URLRequest(url: url)
+  let id: Int
+  let parameters: [String : String]
+  let endpoint: String
+  
+  init(forId id: Int) {
+    self.id = id
+    self.parameters = [String: String]()
+    self.endpoint = "http://bobbyesh.pythonanywhere.com/api/trails/\(self.id)"
   }
 }

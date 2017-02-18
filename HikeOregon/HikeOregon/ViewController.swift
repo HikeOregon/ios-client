@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    let trailRequest = TrailRequest(forId: 1)
+    let trailRequest = TrailRequest(searchFor: "Lake")
     trailRequest.send {(response, error) in
       if let response = response {
         print(response.trails)

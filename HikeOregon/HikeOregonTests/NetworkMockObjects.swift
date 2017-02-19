@@ -39,12 +39,12 @@ class MockURLSessionDataTask: URLSessionDataTaskProtocol {
 struct MockRequest: Request {
   typealias ResponseType = MockResponse
   
-  var parameters: [String : String]
+  var parameters: [Parameter]
   var endpoint: String
   let session: HTTPClient
   
   init(endpoint: String = "", session: MockURLSession) {
-    self.parameters = [String: String]()
+    self.parameters = [Parameter]()
     self.endpoint = endpoint
     self.session = HTTPClient(session: session)
   }

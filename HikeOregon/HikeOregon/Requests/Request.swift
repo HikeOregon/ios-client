@@ -28,7 +28,7 @@ protocol Request {
   var endpoint: String { get }
   
   /// The query parameters that should be sent as a part of the request
-  var parameters: [String: String] { get }
+  var parameters: [Parameter] { get }
   
   /// The session used to send the request, this is mainly for mocking purposes
   var session: HTTPClient { get }

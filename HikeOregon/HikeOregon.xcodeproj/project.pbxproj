@@ -40,6 +40,7 @@
 		0835FAE01E5933CE0029D9F0 /* GenericResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */; };
 		0835FAE21E5A008B0029D9F0 /* ParameterMockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAE11E5A008B0029D9F0 /* ParameterMockObjects.swift */; };
 		0835FAE71E5A01460029D9F0 /* GenericParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAE61E5A01460029D9F0 /* GenericParameterTests.swift */; };
+		0835FAE91E5A23CE0029D9F0 /* Sequence+HikeOregon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAE81E5A23CE0029D9F0 /* Sequence+HikeOregon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponseTests.swift; path = Responses/GenericResponseTests.swift; sourceTree = "<group>"; };
 		0835FAE11E5A008B0029D9F0 /* ParameterMockObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParameterMockObjects.swift; path = Mocks/ParameterMockObjects.swift; sourceTree = "<group>"; };
 		0835FAE61E5A01460029D9F0 /* GenericParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericParameterTests.swift; path = Requests/GenericParameterTests.swift; sourceTree = "<group>"; };
+		0835FAE81E5A23CE0029D9F0 /* Sequence+HikeOregon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sequence+HikeOregon.swift"; path = "Extensions/Sequence+HikeOregon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +311,7 @@
 			children = (
 				0835FAC91E58DDC00029D9F0 /* Dictionary+HikeOregon.swift */,
 				0835FACB1E58DFDE0029D9F0 /* String+HikeOregon.swift */,
+				0835FAE81E5A23CE0029D9F0 /* Sequence+HikeOregon.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				0835FA6C1E58B30E0029D9F0 /* AppDelegate.swift in Sources */,
 				0835FAB31E58C36A0029D9F0 /* Request.swift in Sources */,
 				0835FAB11E58C2570029D9F0 /* TrailRequest.swift in Sources */,
+				0835FAE91E5A23CE0029D9F0 /* Sequence+HikeOregon.swift in Sources */,
 				0835FABC1E58C7DB0029D9F0 /* RequestError.swift in Sources */,
 				0835FABF1E58C9100029D9F0 /* Response.swift in Sources */,
 				0835FAA61E58BD570029D9F0 /* Model.swift in Sources */,

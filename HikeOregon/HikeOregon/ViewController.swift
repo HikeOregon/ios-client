@@ -12,9 +12,8 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
     
-    let trailRequest = TrailRequest(searchFor: "Lake")
+    let trailRequest = TrailRequest(page: nil, searchFor: nil, difficulty: nil, hasRestroom: nil, length: nil)
     trailRequest.send {(response, error) in
       if let response = response {
         print(response.trails)

@@ -9,7 +9,8 @@
 import Foundation
 
 extension Dictionary where Key: ExpressibleByStringLiteral, Value: ExpressibleByStringLiteral {
-  mutating func insertParameter(_ parameter: Parameter) {
+  mutating func insertParameter(_ parameter: Parameter?) {
+    guard let parameter = parameter else { return }
     if let key = parameter.key as? Key, let value = parameter.value as? Value {
       self[key] = value
     }

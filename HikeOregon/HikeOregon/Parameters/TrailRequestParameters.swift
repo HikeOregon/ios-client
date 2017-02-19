@@ -29,3 +29,39 @@ extension TrailSearchParameter : ExpressibleByStringLiteral {
     self.internalValue = value
   }
 }
+
+struct TrailPageParameter: IntParameter {
+  let key = "page"
+  let internalValue: Int
+  
+  init(integerLiteral value: IntegerLiteralType) {
+    self.internalValue = value
+  }
+}
+
+struct TrailDifficultyParameter: IntParameter {
+  let key = "difficulty"
+  let internalValue: Int
+  
+  init(integerLiteral value: IntegerLiteralType) {
+    self.internalValue = value
+  }
+}
+
+struct TrailRestroomParameter: BooleanParameter {
+  let key = "restroom"
+  let internalValue: Bool
+  
+  init(booleanLiteral value: BooleanLiteralType) {
+    self.internalValue = value
+  }
+}
+
+struct TrailLengthParameter: DoubleParameter {
+  let key = "length"
+  let internalValue: Double
+  
+  init(floatLiteral value: FloatLiteralType) {
+    self.internalValue = value
+  }
+}

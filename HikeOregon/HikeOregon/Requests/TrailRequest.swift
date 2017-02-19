@@ -15,11 +15,19 @@ struct TrailRequest: Request {
   let endpoint: String
   let session: HTTPClient
   
-  init(searchFor search: TrailSearchParameter? = nil, session: HTTPClient = HTTPClient.sharedClient) {
+  init(page: TrailPageParameter? = nil,
+       searchFor search: TrailSearchParameter? = nil,
+       difficulty: TrailDifficultyParameter? = nil,
+       hasRestroom restroom: TrailRestroomParameter? = nil,
+       // Min length? Max?
+       length: TrailLengthParameter? = nil,
+       session: HTTPClient = HTTPClient.sharedClient) {
     var parameters = [String: String]()
-    if let search = search {
-      parameters.insertParameter(search)
-    }
+    parameters.insertParameter(page)
+    parameters.insertParameter(search)
+    parameters.insertParameter(difficulty)
+    parameters.insertParameter(restroom)
+    parameters.insertParameter(length)
     
     self.parameters = parameters
     self.endpoint = Endpoint.trails

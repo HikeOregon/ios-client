@@ -32,7 +32,7 @@ protocol DoubleParameter : ExpressibleByFloatLiteral, Parameter {
 protocol ArrayParameter : ExpressibleByArrayLiteral, Parameter {
   var internalValue: [Self.Element] { get }
   
-  init?(_ elements: [Self.Element]?)
+  init(_ elements: [Self.Element])
 }
 
 extension Parameter {
@@ -46,13 +46,8 @@ extension BooleanParameter {
     return String(self.internalValue)
   }
   
-  public init?(_ value: BooleanLiteralType?) {
-    if let value = value {
-      self.init(booleanLiteral: value)
-    }
-    else {
-      return nil
-    }
+  public init(_ value: BooleanLiteralType) {
+    self.init(booleanLiteral: value)
   }
 }
 
@@ -61,13 +56,8 @@ extension StringParameter {
     return self.internalValue
   }
   
-  public init?(_ value: StringLiteralType?) {
-    if let value = value {
+  public init(_ value: StringLiteralType) {
       self.init(stringLiteral: value)
-    }
-    else {
-      return nil
-    }
   }
 }
 
@@ -76,13 +66,8 @@ extension IntParameter {
     return String(self.internalValue)
   }
   
-  public init?(_ value: IntegerLiteralType?) {
-    if let value = value {
-      self.init(integerLiteral: value)
-    }
-    else {
-      return nil
-    }
+  public init(_ value: IntegerLiteralType) {
+    self.init(integerLiteral: value)
   }
 }
 
@@ -91,13 +76,8 @@ extension DoubleParameter {
     return String(self.internalValue)
   }
   
-  public init?(_ value: FloatLiteralType?) {
-    if let value = value {
-      self.init(floatLiteral: value)
-    }
-    else {
-      return nil
-    }
+  public init(_ value: FloatLiteralType) {
+    self.init(floatLiteral: value)
   }
 }
 
@@ -107,6 +87,6 @@ extension ArrayParameter {
   }
   
   public init(arrayLiteral elements: Self.Element...) {
-    self.init(elements)!
+    self.init(elements)
   }
 }

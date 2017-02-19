@@ -19,4 +19,12 @@ class GenericResponseTests: XCTestCase, ResponseTestable {
     
     XCTAssertNil(response)
   }
+  
+  func test_ValidJson_ResponseParses() {
+    let data = Data(base64Encoded: ResponseInjections.validJson)!
+    
+    let response = MockResponse(from: data)
+    
+    XCTAssertNotNil(response)
+  }
 }

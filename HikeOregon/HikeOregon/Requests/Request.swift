@@ -15,7 +15,7 @@ protocol Request {
   var parameters: [String: String] { get }
   var session: HTTPClient { get }
   
-  func send(completionHandler handler: @escaping (_ response: Self.ResponseType?, _ error: APIError?) -> Void);
+  func send(completionHandler handler: @escaping (_ response: Self.ResponseType?, _ error: APIError?) -> Void)
 }
 
 extension Request {

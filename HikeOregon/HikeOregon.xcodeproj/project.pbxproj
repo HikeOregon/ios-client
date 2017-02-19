@@ -12,7 +12,6 @@
 		0835FA711E58B30E0029D9F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0835FA6F1E58B30E0029D9F0 /* Main.storyboard */; };
 		0835FA731E58B30E0029D9F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0835FA721E58B30E0029D9F0 /* Assets.xcassets */; };
 		0835FA761E58B30E0029D9F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0835FA741E58B30E0029D9F0 /* LaunchScreen.storyboard */; };
-		0835FA811E58B30F0029D9F0 /* HikeOregonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FA801E58B30F0029D9F0 /* HikeOregonTests.swift */; };
 		0835FA8C1E58B30F0029D9F0 /* HikeOregonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FA8B1E58B30F0029D9F0 /* HikeOregonUITests.swift */; };
 		0835FA9B1E58B34A0029D9F0 /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FA9A1E58B34A0029D9F0 /* Trail.swift */; };
 		0835FA9E1E58B8E10029D9F0 /* TrailModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FA9D1E58B8E10029D9F0 /* TrailModelTests.swift */; };
@@ -39,6 +38,8 @@
 		0835FADC1E58F9EF0029D9F0 /* GenericRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */; };
 		0835FADE1E5932BD0029D9F0 /* TrailResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADD1E5932BD0029D9F0 /* TrailResponseTests.swift */; };
 		0835FAE01E5933CE0029D9F0 /* GenericResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */; };
+		0835FAE21E5A008B0029D9F0 /* ParameterMockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAE11E5A008B0029D9F0 /* ParameterMockObjects.swift */; };
+		0835FAE71E5A01460029D9F0 /* GenericParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAE61E5A01460029D9F0 /* GenericParameterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,6 @@
 		0835FA751E58B30E0029D9F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0835FA771E58B30E0029D9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0835FA7C1E58B30F0029D9F0 /* HikeOregonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HikeOregonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0835FA801E58B30F0029D9F0 /* HikeOregonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeOregonTests.swift; sourceTree = "<group>"; };
 		0835FA821E58B30F0029D9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0835FA871E58B30F0029D9F0 /* HikeOregonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HikeOregonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0835FA8B1E58B30F0029D9F0 /* HikeOregonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeOregonUITests.swift; sourceTree = "<group>"; };
@@ -97,6 +97,8 @@
 		0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericRequestTests.swift; path = Requests/GenericRequestTests.swift; sourceTree = "<group>"; };
 		0835FADD1E5932BD0029D9F0 /* TrailResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailResponseTests.swift; path = Responses/TrailResponseTests.swift; sourceTree = "<group>"; };
 		0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponseTests.swift; path = Responses/GenericResponseTests.swift; sourceTree = "<group>"; };
+		0835FAE11E5A008B0029D9F0 /* ParameterMockObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParameterMockObjects.swift; path = Mocks/ParameterMockObjects.swift; sourceTree = "<group>"; };
+		0835FAE61E5A01460029D9F0 /* GenericParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericParameterTests.swift; path = Requests/GenericParameterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,10 +168,9 @@
 			children = (
 				0835FAD21E58E98F0029D9F0 /* Responses */,
 				0835FAAD1E58C2140029D9F0 /* Requests */,
-				0835FAA71E58BFFD0029D9F0 /* NetworkMocks */,
+				0835FAA71E58BFFD0029D9F0 /* Mocks */,
 				0835FAA01E58B93C0029D9F0 /* DependencyInjections */,
 				0835FA9C1E58B8A00029D9F0 /* Models */,
-				0835FA801E58B30F0029D9F0 /* HikeOregonTests.swift */,
 				0835FA821E58B30F0029D9F0 /* Info.plist */,
 			);
 			path = HikeOregonTests;
@@ -226,12 +227,13 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		0835FAA71E58BFFD0029D9F0 /* NetworkMocks */ = {
+		0835FAA71E58BFFD0029D9F0 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
 				0835FAA81E58C0280029D9F0 /* NetworkMockObjects.swift */,
+				0835FAE11E5A008B0029D9F0 /* ParameterMockObjects.swift */,
 			);
-			name = NetworkMocks;
+			name = Mocks;
 			sourceTree = "<group>";
 		};
 		0835FAAA1E58C0C10029D9F0 /* Utilities */ = {
@@ -245,6 +247,7 @@
 		0835FAAD1E58C2140029D9F0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				0835FAE31E5A00FB0029D9F0 /* Parameters */,
 				0835FAD51E58EB1D0029D9F0 /* RequestTestHelper.swift */,
 				0835FAD91E58ED570029D9F0 /* TrailRequestTests.swift */,
 				0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */,
@@ -326,6 +329,14 @@
 				0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */,
 			);
 			name = Responses;
+			sourceTree = "<group>";
+		};
+		0835FAE31E5A00FB0029D9F0 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				0835FAE61E5A01460029D9F0 /* GenericParameterTests.swift */,
+			);
+			name = Parameters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,7 +501,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0835FAE01E5933CE0029D9F0 /* GenericResponseTests.swift in Sources */,
+				0835FAE71E5A01460029D9F0 /* GenericParameterTests.swift in Sources */,
 				0835FAD11E58E9440029D9F0 /* Responses.swift in Sources */,
+				0835FAE21E5A008B0029D9F0 /* ParameterMockObjects.swift in Sources */,
 				0835FA9E1E58B8E10029D9F0 /* TrailModelTests.swift in Sources */,
 				0835FADA1E58ED570029D9F0 /* TrailRequestTests.swift in Sources */,
 				0835FAD61E58EB1D0029D9F0 /* RequestTestHelper.swift in Sources */,
@@ -498,7 +511,6 @@
 				0835FADE1E5932BD0029D9F0 /* TrailResponseTests.swift in Sources */,
 				0835FAA41E58B97E0029D9F0 /* TrailModelDictionaries.swift in Sources */,
 				0835FAD41E58EA120029D9F0 /* ResponseTestHelper.swift in Sources */,
-				0835FA811E58B30F0029D9F0 /* HikeOregonTests.swift in Sources */,
 				0835FADC1E58F9EF0029D9F0 /* GenericRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -740,6 +752,7 @@
 				0835FA921E58B30F0029D9F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0835FA931E58B30F0029D9F0 /* Build configuration list for PBXNativeTarget "HikeOregonTests" */ = {
 			isa = XCConfigurationList;
@@ -748,6 +761,7 @@
 				0835FA951E58B30F0029D9F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0835FA961E58B30F0029D9F0 /* Build configuration list for PBXNativeTarget "HikeOregonUITests" */ = {
 			isa = XCConfigurationList;
@@ -756,6 +770,7 @@
 				0835FA981E58B30F0029D9F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

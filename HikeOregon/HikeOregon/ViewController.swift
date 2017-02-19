@@ -15,22 +15,26 @@ class ViewController: UIViewController {
     
     let trailRequest = TrailRequest(page: nil, searchFor: nil, difficulty: nil, hasRestroom: nil, length: nil)
     trailRequest.send {(response, error) in
+      print("--------------------")
       if let response = response {
         print(response.trails)
       }
       else {
         print("RESPONSE NOT PARSED")
       }
+      print("--------------------")
     }
     
     let idRequest = TrailIdRequest(forId: 1)
     idRequest.send {(response, error) in
+      print("--------------------")
       if let response = response {
         print(response.trails)
       }
       else {
         print("ID RESPONSE NOT PARSED")
       }
+      print("--------------------")
     }
   }
 

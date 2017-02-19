@@ -19,7 +19,6 @@ extension Response {
   init?(from data: Data) {
     do {
       let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-      // TODO: Do we always want the response returned as a dictionary or an array of dicts?
       self.init(from: json as! [String: AnyObject])
     }
     catch {

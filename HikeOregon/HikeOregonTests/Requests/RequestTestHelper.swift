@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import XCTest
 @testable import HikeOregon
 
 protocol RequestTestable {
@@ -15,7 +14,4 @@ protocol RequestTestable {
   
   var request: RequestType! { get }
   var session: MockURLSession { get }
-}
-
-extension RequestTestable where Self: XCTestCase {
 }

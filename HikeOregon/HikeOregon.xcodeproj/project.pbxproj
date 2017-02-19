@@ -36,6 +36,9 @@
 		0835FAD41E58EA120029D9F0 /* ResponseTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAD31E58EA120029D9F0 /* ResponseTestHelper.swift */; };
 		0835FAD61E58EB1D0029D9F0 /* RequestTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAD51E58EB1D0029D9F0 /* RequestTestHelper.swift */; };
 		0835FADA1E58ED570029D9F0 /* TrailRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAD91E58ED570029D9F0 /* TrailRequestTests.swift */; };
+		0835FADC1E58F9EF0029D9F0 /* GenericRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */; };
+		0835FADE1E5932BD0029D9F0 /* TrailResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADD1E5932BD0029D9F0 /* TrailResponseTests.swift */; };
+		0835FAE01E5933CE0029D9F0 /* GenericResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		0835FAD31E58EA120029D9F0 /* ResponseTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseTestHelper.swift; path = Responses/ResponseTestHelper.swift; sourceTree = "<group>"; };
 		0835FAD51E58EB1D0029D9F0 /* RequestTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestTestHelper.swift; path = Requests/RequestTestHelper.swift; sourceTree = "<group>"; };
 		0835FAD91E58ED570029D9F0 /* TrailRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailRequestTests.swift; path = Requests/TrailRequestTests.swift; sourceTree = "<group>"; };
+		0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericRequestTests.swift; path = Requests/GenericRequestTests.swift; sourceTree = "<group>"; };
+		0835FADD1E5932BD0029D9F0 /* TrailResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailResponseTests.swift; path = Responses/TrailResponseTests.swift; sourceTree = "<group>"; };
+		0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponseTests.swift; path = Responses/GenericResponseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +247,7 @@
 			children = (
 				0835FAD51E58EB1D0029D9F0 /* RequestTestHelper.swift */,
 				0835FAD91E58ED570029D9F0 /* TrailRequestTests.swift */,
+				0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -315,6 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				0835FAD31E58EA120029D9F0 /* ResponseTestHelper.swift */,
+				0835FADD1E5932BD0029D9F0 /* TrailResponseTests.swift */,
+				0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */,
 			);
 			name = Responses;
 			sourceTree = "<group>";
@@ -480,14 +489,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0835FAE01E5933CE0029D9F0 /* GenericResponseTests.swift in Sources */,
 				0835FAD11E58E9440029D9F0 /* Responses.swift in Sources */,
 				0835FA9E1E58B8E10029D9F0 /* TrailModelTests.swift in Sources */,
 				0835FADA1E58ED570029D9F0 /* TrailRequestTests.swift in Sources */,
 				0835FAD61E58EB1D0029D9F0 /* RequestTestHelper.swift in Sources */,
 				0835FAA91E58C0280029D9F0 /* NetworkMockObjects.swift in Sources */,
+				0835FADE1E5932BD0029D9F0 /* TrailResponseTests.swift in Sources */,
 				0835FAA41E58B97E0029D9F0 /* TrailModelDictionaries.swift in Sources */,
 				0835FAD41E58EA120029D9F0 /* ResponseTestHelper.swift in Sources */,
 				0835FA811E58B30F0029D9F0 /* HikeOregonTests.swift in Sources */,
+				0835FADC1E58F9EF0029D9F0 /* GenericRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

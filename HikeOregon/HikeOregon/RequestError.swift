@@ -12,3 +12,13 @@ enum RequestError: APIError {
   case failedToGenerate
   case failedToSend(err: NSError)
 }
+
+extension RequestError: Equatable {
+  static func ==(lhs: RequestError, rhs: RequestError) -> Bool {
+    switch (lhs, rhs) {
+    case (.failedToGenerate, .failedToGenerate): return true
+    case (.failedToSend(_), .failedToSend(_)): return true
+    default: return false
+    }
+  }
+}

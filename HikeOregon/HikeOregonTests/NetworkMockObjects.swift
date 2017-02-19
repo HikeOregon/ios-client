@@ -37,5 +37,23 @@ class MockURLSessionDataTask: URLSessionDataTaskProtocol {
 }
 
 struct MockRequest: Request {
-  typealias ResponseType = AnyObject
+  typealias ResponseType = MockResponse
+  
+  var parameters: [String : String]
+  var endpoint: String
+  let session: HTTPClient
+  
+  init(endpoint: String = "", session: MockURLSession) {
+    self.parameters = [String: String]()
+    self.endpoint = endpoint
+    self.session = HTTPClient(session: session)
+  }
+}
+
+struct MockResponse: Response {
+  var error: APIError?
+  
+  init(from json: [String : AnyObject]) {
+    /* stub */
+  }
 }

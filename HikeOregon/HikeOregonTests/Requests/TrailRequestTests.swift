@@ -26,27 +26,4 @@ class TrailRequestTests: XCTestCase, RequestTestable {
     self.session.nextError = nil
     super.tearDown()
   }
-  
-  func test_MalformedJson_CallsbackWithParseError() {
-    self.session.nextData = Data(base64Encoded: ResponseInjections.malformedJson)
-    self.session.nextError = nil
-    self.request.send {(response, error) in
-      XCTAssertNil(response)
-      XCTAssertNotNil(error)
-      XCTAssert(false)
-      
-      XCTAssertEqual(error! as! ResponseError, ResponseError.failedToParse)
-    }
-  }
-  
-  func test_NoData_CallsbackWithDataError() {
-    self.session.nextData = nil
-    self.session.nextError = nil
-    self.request.send {(response, error) in
-      XCTAssertNil(response)
-      XCTAssertNotNil(error)
-      
-      XCTAssertEqual(error! as! ResponseError, ResponseError.noDataRecieved)
-    }
-  }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0835FA6C1E58B30E0029D9F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FA6B1E58B30E0029D9F0 /* AppDelegate.swift */; };
 		0835FA6E1E58B30E0029D9F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FA6D1E58B30E0029D9F0 /* ViewController.swift */; };
-		0835FA711E58B30E0029D9F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0835FA6F1E58B30E0029D9F0 /* Main.storyboard */; };
 		0835FA731E58B30E0029D9F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0835FA721E58B30E0029D9F0 /* Assets.xcassets */; };
 		0835FA761E58B30E0029D9F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0835FA741E58B30E0029D9F0 /* LaunchScreen.storyboard */; };
 		0835FA811E58B30F0029D9F0 /* HikeOregonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FA801E58B30F0029D9F0 /* HikeOregonTests.swift */; };
@@ -39,6 +38,7 @@
 		0835FADC1E58F9EF0029D9F0 /* GenericRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */; };
 		0835FADE1E5932BD0029D9F0 /* TrailResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADD1E5932BD0029D9F0 /* TrailResponseTests.swift */; };
 		0835FAE01E5933CE0029D9F0 /* GenericResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */; };
+		3DEA3A6C1E91B40800F2992B /* HikingTrailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA3A6B1E91B40800F2992B /* HikingTrailCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,6 @@
 		0835FA681E58B30E0029D9F0 /* HikeOregon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HikeOregon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0835FA6B1E58B30E0029D9F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0835FA6D1E58B30E0029D9F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0835FA701E58B30E0029D9F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0835FA721E58B30E0029D9F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0835FA751E58B30E0029D9F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0835FA771E58B30E0029D9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericRequestTests.swift; path = Requests/GenericRequestTests.swift; sourceTree = "<group>"; };
 		0835FADD1E5932BD0029D9F0 /* TrailResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailResponseTests.swift; path = Responses/TrailResponseTests.swift; sourceTree = "<group>"; };
 		0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponseTests.swift; path = Responses/GenericResponseTests.swift; sourceTree = "<group>"; };
+		3DEA3A6B1E91B40800F2992B /* HikingTrailCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikingTrailCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +152,8 @@
 				0835FAAA1E58C0C10029D9F0 /* Utilities */,
 				0835FA991E58B3170029D9F0 /* Models */,
 				0835FA6B1E58B30E0029D9F0 /* AppDelegate.swift */,
+				3DEA3A6B1E91B40800F2992B /* HikingTrailCollectionViewController.swift */,
 				0835FA6D1E58B30E0029D9F0 /* ViewController.swift */,
-				0835FA6F1E58B30E0029D9F0 /* Main.storyboard */,
 				0835FA721E58B30E0029D9F0 /* Assets.xcassets */,
 				0835FA741E58B30E0029D9F0 /* LaunchScreen.storyboard */,
 				0835FA771E58B30E0029D9F0 /* Info.plist */,
@@ -440,7 +440,6 @@
 			files = (
 				0835FA761E58B30E0029D9F0 /* LaunchScreen.storyboard in Resources */,
 				0835FA731E58B30E0029D9F0 /* Assets.xcassets in Resources */,
-				0835FA711E58B30E0029D9F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +475,7 @@
 				0835FAB31E58C36A0029D9F0 /* Request.swift in Sources */,
 				0835FAB11E58C2570029D9F0 /* TrailRequest.swift in Sources */,
 				0835FABC1E58C7DB0029D9F0 /* RequestError.swift in Sources */,
+				3DEA3A6C1E91B40800F2992B /* HikingTrailCollectionViewController.swift in Sources */,
 				0835FABF1E58C9100029D9F0 /* Response.swift in Sources */,
 				0835FAA61E58BD570029D9F0 /* Model.swift in Sources */,
 				0835FAB61E58C65A0029D9F0 /* ResponseError.swift in Sources */,
@@ -527,14 +527,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0835FA6F1E58B30E0029D9F0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0835FA701E58B30E0029D9F0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0835FA741E58B30E0029D9F0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -740,6 +732,7 @@
 				0835FA921E58B30F0029D9F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0835FA931E58B30F0029D9F0 /* Build configuration list for PBXNativeTarget "HikeOregonTests" */ = {
 			isa = XCConfigurationList;
@@ -748,6 +741,7 @@
 				0835FA951E58B30F0029D9F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0835FA961E58B30F0029D9F0 /* Build configuration list for PBXNativeTarget "HikeOregonUITests" */ = {
 			isa = XCConfigurationList;
@@ -756,6 +750,7 @@
 				0835FA981E58B30F0029D9F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

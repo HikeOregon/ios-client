@@ -10,11 +10,29 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+		
   var window: UIWindow?
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    /******* CREATE HOME SCREEN *******/
+    window = UIWindow(frame: UIScreen.main.bounds)    // Create screen
+    window?.makeKeyAndVisible()                       // Make sure screen is seen
+    
+    let flowLayout = UICollectionViewFlowLayout()     // Create CollectionView Flow Layout
+    let hikingTrailCollectionViewController = HikingTrailCollectionViewController(collectionViewLayout: flowLayout)
+    let navigationController = UINavigationController(rootViewController: hikingTrailCollectionViewController)
+    
+    window?.rootViewController = navigationController // Set screen as rootViewController
+    
+    // Change navigation bar to forest green RGB(43, 139, 34)
+    UINavigationBar.appearance().barTintColor = UIColor.forestGreen()
+    
+    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+    application.statusBarStyle = .lightContent
+    /**********************************/
+    
     // Override point for customization after application launch.
     return true
   }

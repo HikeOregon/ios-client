@@ -38,6 +38,9 @@
 		0835FADC1E58F9EF0029D9F0 /* GenericRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */; };
 		0835FADE1E5932BD0029D9F0 /* TrailResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADD1E5932BD0029D9F0 /* TrailResponseTests.swift */; };
 		0835FAE01E5933CE0029D9F0 /* GenericResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */; };
+		3D30BE1D1E995F11008A71EC /* UIColor+HikeOregon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30BE1C1E995F11008A71EC /* UIColor+HikeOregon.swift */; };
+		3D30BE1F1E995F6C008A71EC /* UIView+HikeOregon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30BE1E1E995F6C008A71EC /* UIView+HikeOregon.swift */; };
+		3D30BE221E99622A008A71EC /* TrailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30BE211E99622A008A71EC /* TrailCell.swift */; };
 		3DEA3A6C1E91B40800F2992B /* HikingTrailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA3A6B1E91B40800F2992B /* HikingTrailCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,9 @@
 		0835FADB1E58F9EF0029D9F0 /* GenericRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericRequestTests.swift; path = Requests/GenericRequestTests.swift; sourceTree = "<group>"; };
 		0835FADD1E5932BD0029D9F0 /* TrailResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailResponseTests.swift; path = Responses/TrailResponseTests.swift; sourceTree = "<group>"; };
 		0835FADF1E5933CE0029D9F0 /* GenericResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponseTests.swift; path = Responses/GenericResponseTests.swift; sourceTree = "<group>"; };
+		3D30BE1C1E995F11008A71EC /* UIColor+HikeOregon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HikeOregon.swift"; sourceTree = "<group>"; };
+		3D30BE1E1E995F6C008A71EC /* UIView+HikeOregon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+HikeOregon.swift"; sourceTree = "<group>"; };
+		3D30BE211E99622A008A71EC /* TrailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailCell.swift; sourceTree = "<group>"; };
 		3DEA3A6B1E91B40800F2992B /* HikingTrailCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikingTrailCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,11 +158,11 @@
 				0835FAAA1E58C0C10029D9F0 /* Utilities */,
 				0835FA991E58B3170029D9F0 /* Models */,
 				0835FA6B1E58B30E0029D9F0 /* AppDelegate.swift */,
-				3DEA3A6B1E91B40800F2992B /* HikingTrailCollectionViewController.swift */,
 				0835FA6D1E58B30E0029D9F0 /* ViewController.swift */,
 				0835FA721E58B30E0029D9F0 /* Assets.xcassets */,
 				0835FA741E58B30E0029D9F0 /* LaunchScreen.storyboard */,
 				0835FA771E58B30E0029D9F0 /* Info.plist */,
+				3D30BE201E9961CF008A71EC /* Jason */,
 			);
 			path = HikeOregon;
 			sourceTree = "<group>";
@@ -328,6 +334,17 @@
 			name = Responses;
 			sourceTree = "<group>";
 		};
+		3D30BE201E9961CF008A71EC /* Jason */ = {
+			isa = PBXGroup;
+			children = (
+				3D30BE1C1E995F11008A71EC /* UIColor+HikeOregon.swift */,
+				3D30BE1E1E995F6C008A71EC /* UIView+HikeOregon.swift */,
+				3DEA3A6B1E91B40800F2992B /* HikingTrailCollectionViewController.swift */,
+				3D30BE211E99622A008A71EC /* TrailCell.swift */,
+			);
+			name = Jason;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -464,7 +481,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D30BE1F1E995F6C008A71EC /* UIView+HikeOregon.swift in Sources */,
 				0835FA6E1E58B30E0029D9F0 /* ViewController.swift in Sources */,
+				3D30BE1D1E995F11008A71EC /* UIColor+HikeOregon.swift in Sources */,
 				0835FAC21E58CAFF0029D9F0 /* TrailResponse.swift in Sources */,
 				0835FACE1E58E56A0029D9F0 /* Endpoints.swift in Sources */,
 				0835FAAC1E58C0D40029D9F0 /* HTTPClient.swift in Sources */,
@@ -476,6 +495,7 @@
 				0835FAB11E58C2570029D9F0 /* TrailRequest.swift in Sources */,
 				0835FABC1E58C7DB0029D9F0 /* RequestError.swift in Sources */,
 				3DEA3A6C1E91B40800F2992B /* HikingTrailCollectionViewController.swift in Sources */,
+				3D30BE221E99622A008A71EC /* TrailCell.swift in Sources */,
 				0835FABF1E58C9100029D9F0 /* Response.swift in Sources */,
 				0835FAA61E58BD570029D9F0 /* Model.swift in Sources */,
 				0835FAB61E58C65A0029D9F0 /* ResponseError.swift in Sources */,

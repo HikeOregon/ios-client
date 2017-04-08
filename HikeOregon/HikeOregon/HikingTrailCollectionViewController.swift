@@ -12,9 +12,10 @@ class HikingTrailCollectionViewController: UICollectionViewController, UICollect
   
   //******* VARIABLES *******//
 
-  let customCellIdentifier = "customCellIdentifier"   // Custom Cell identifier
+  let trailCellIdentifier = "trailCell"
   let cellHeight = CGFloat(150)
-  let numberOfTrails = 5
+  let imageArray = [#imageLiteral(resourceName: "bridal veils_temp"), #imageLiteral(resourceName: "oneonta_temp"), #imageLiteral(resourceName: "latourell_temp")]
+  var hikeArray = [Trail]()
   
   
   //******* SETUP *******//
@@ -22,17 +23,48 @@ class HikingTrailCollectionViewController: UICollectionViewController, UICollect
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    updateTrails()
+
+    
     collectionView?.alwaysBounceVertical = true
     navigationItem.title = "HIKING TRAILS"
     collectionView?.backgroundColor = UIColor.forestGreen()
     
     // Create custom cell for collectionView
-    collectionView?.register(CustomCell.self, forCellWithReuseIdentifier: customCellIdentifier)
+    collectionView?.register(TrailCell.self, forCellWithReuseIdentifier: trailCellIdentifier)
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.collectionView?.reloadData()
+  }
+  
+  func updateTrails() {
+    
+    let trailRequest = TrailRequest(page: nil, searchFor: nil, difficulty: nil, hasRestroom: nil, length: nil)
+    trailRequest.send {(response, error) in
+      if let response = response {
+        self.hikeArray = response.trails
+        self.collectionView?.reloadData()
+      }
+      else {
+        print("RESPONSE NOT PARSED")
+      }
+    }
+    
+     /*
+     DispatchQueue.main.async (execute: { () -> Void in
+     if(self.hikeArray.count > 0) {
+     self.collectionView?.reloadData()
+     }
+     })
+     */ //Spinner
   }
   
   
@@ -42,14 +74,22 @@ class HikingTrailCollectionViewController: UICollectionViewController, UICollect
   
   // Create number of hikes per section
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return numberOfTrails // Test purposes
+    return self.hikeArray.count // Test purposes
   }
   
-  // Create hike cells
+  // Create trail cells
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: customCellIdentifier, for: indexPath)
+  
+    let dequeued = collectionView.dequeueReusableCell(withReuseIdentifier: trailCellIdentifier, for: indexPath)
+    let trailCell = dequeued as! TrailCell
     
-    return customCell
+    trailCell.trail = hikeArray[indexPath.item]
+    
+    // Change when images are on server
+    trailCell.hikeButton.setBackgroundImage(imageArray[indexPath.row], for: .normal)
+    
+    
+    return trailCell
   }
   
   // Resize hike cells
@@ -72,67 +112,7 @@ class HikingTrailCollectionViewController: UICollectionViewController, UICollect
 
 
 
-class CustomCell: UICollectionViewCell {
-  
-  // Called when cell is dequequed
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    setupView()
-  }
-  
-  func setupView() {
-    backgroundColor = UIColor.black
-    
-    addSubview(hikeButton)
-    
-    addFormatConstraint("H:|[v0]|", views: hikeButton)
-    addFormatConstraint("V:|[v0]|", views: hikeButton)
-  }
-  
-  let hikeButton: UIButton = {
-    let button = UIButton()
-    button.setTitle("Multnomah Falls", for: .normal)
-    button.setTitleColor(.white, for: .normal)
-    return button
-  }()
-  
- 
-  
-  // Swift specific error
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
-}
 
-extension UIColor {
-  
-  static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
-    return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
-  }
-  
-  static func forestGreen() -> UIColor {
-    return rgb(red: 20, green: 53, blue: 26)
-  }
-  
-}
 
-extension UIView {
-  
-  func addFormatConstraint(_ format: String, views: UIView...) {
-    
-    var dict = [String:UIView]()
-    
-    for (index, view) in views.enumerated() {
-      let key = "v\(index)"
-      dict[key] = view
-      
-      // Turn off autoresizing to use custom constraints
-      view.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: dict))
-  }
-  
-}
+
 

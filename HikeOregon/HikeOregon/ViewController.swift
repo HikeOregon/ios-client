@@ -14,22 +14,24 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     let trailRequest = TrailRequest(page: nil, searchFor: nil, difficulty: nil, hasRestroom: nil, length: nil)
-    trailRequest.send {(response, error) in
-      if let response = response {
+    trailRequest.send {(result) in
+      print("--------------------")
+      switch result {
+      case .ok(let response):
         print(response.trails)
-      }
-      else {
-        print("RESPONSE NOT PARSED")
+      case .err(let error):
+        print("RESPONSE NOT PARSED: \(error)")
       }
     }
     
     let idRequest = TrailIdRequest(forId: 1)
-    idRequest.send {(response, error) in
-      if let response = response {
+    idRequest.send {(result) in
+      print("--------------------")
+      switch result {
+      case .ok(let response):
         print(response.trails)
-      }
-      else {
-        print("ID RESPONSE NOT PARSED")
+      case .err(let error):
+        print("ID RESPONSE NOT PARSED: \(error)")
       }
     }
   }

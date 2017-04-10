@@ -8,6 +8,20 @@
 
 import Foundation
 
+typealias RequestResult<T: Response> = Result<T, APIError>
+
+/**
+ A type that can execute an HTTP request
+ 
+ Conforming types can be used to send an HTTP request to a specified endpoint with some given 
+ parameters. Configuration of the request is done through the `endpoint` and `parameters` properties. 
+ The `send` method can be called to actually executed the request. When the request completes, a 
+ callback will be exectued with either the parsed response object, or an error if one occurred.
+ 
+ The `ResponseType` associated type is the type of object that we are expecting as a response from the 
+ HTTP request. When the callback fires after `send` completes, the response returned will be of this 
+ type.
+ */
 protocol Request {
   associatedtype ResponseType: Response;
   
@@ -15,45 +29,56 @@ protocol Request {
   var parameters: [String: String] { get }
   var session: HTTPClient { get }
   
-  func send(completionHandler handler: @escaping (_ response: Self.ResponseType?, _ error: APIError?) -> Void);
+  func send(completionHandler handler: @escaping (_ result: RequestResult<Self.ResponseType>) -> Void);
 }
 
 extension Request {
-  func send(completionHandler handler: @escaping (_ response: Self.ResponseType?, _ error: APIError?) -> Void) {
+  /**
+   Send the request asynchronously
+   
+   When the response has been recieved, if no error has occurred, the body of the response will be 
+   parsed and a `ResponseType` object will be instantiated. The `handler` callback will be exectued with 
+   the parsed response, or an error if an error has occured.
+   
+   The callback will be executed on the main thread so that any updates to the UI within the completion 
+   handler will be reflected immediately. This means you should be careful not to do intensive 
+   calculations from within the callback.
+   
+   - Parameter completionHandler: The block to be executed upon completion of the request
+   - Parameter response: The parsed response or nil if an error has occurred
+   - Parameter error: An error if one has occurred either in parsing or in sending the request, 
+      otherwise nil
+   */
+  func send(completionHandler handler: @escaping (_ result: RequestResult<Self.ResponseType>) -> Void) {
     guard let urlRequest = self.generateURLRequest() else {
-      handler(nil, RequestError.failedToGenerate)
+      handler(.err(RequestError.failedToGenerate))
       return
     }
     
     self.session.send(urlRequest) {(data, response, error) in
-      let finalResponse: Self.ResponseType?
-      let finalError: APIError?
+      let result: RequestResult<Self.ResponseType>
       defer {
         DispatchQueue.main.async {
-          handler(finalResponse, finalError)
+          handler(result)
         }
       }
       
       if let err = error {
-        finalResponse = nil
-        finalError = RequestError.failedToSend(err: err as NSError)
+        result = .err(RequestError.failedToSend(err: err as NSError))
         return
       }
       
       guard let jsonData = data else {
-        finalResponse = nil
-        finalError = ResponseError.noDataRecieved
+        result = .err(ResponseError.noDataRecieved)
         return
       }
       
       guard let response = Self.ResponseType(from: jsonData) else {
-        finalResponse = nil
-        finalError = ResponseError.failedToParse
+        result = .err(ResponseError.failedToParse)
         return
       }
       
-      finalResponse = response;
-      finalError = response.error;
+      result = .ok(response)
     }
   }
   

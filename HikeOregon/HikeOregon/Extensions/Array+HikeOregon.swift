@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Sequence where Iterator.Element == Parameter {
+extension Array where Element == Parameter {
   func httpParameters() -> String {
     let parameterArray = self.map { (parameter) -> String in
       let percentEscapedKey = parameter.key.addingPercentEncodingForURLQueryValue()!
@@ -18,9 +18,7 @@ extension Sequence where Iterator.Element == Parameter {
     
     return parameterArray.joined(separator: "&")
   }
-}
-
-extension RangeReplaceableCollection where Iterator.Element == Parameter {
+  
   mutating func insertParameter(_ parameter: Parameter?) {
     guard let parameter = parameter else { return }
     self.append(parameter)

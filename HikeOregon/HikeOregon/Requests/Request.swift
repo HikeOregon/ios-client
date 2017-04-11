@@ -23,12 +23,18 @@ typealias RequestResult<T: Response> = Result<T, APIError>
  type.
  */
 protocol Request {
+  /// The type of the responce object we are expecting back
   associatedtype ResponseType: Response;
   
+  /// The full string url path we are sending the request to (including domain name and route)
   var endpoint: String { get }
-  var parameters: [String: String] { get }
-  var session: HTTPClient { get }
   
+  /// The query parameters that should be sent as a part of the request
+  var parameters: [Parameter] { get }
+  
+  /// The session used to send the request, this is mainly for mocking purposes
+  var session: HTTPClient { get }
+
   func send(completionHandler handler: @escaping (_ result: RequestResult<Self.ResponseType>) -> Void);
 }
 

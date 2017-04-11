@@ -11,7 +11,7 @@ import Foundation
 struct TrailRequest: Request {
   typealias ResponseType = TrailResponse
 
-  let parameters: [String : String]
+  let parameters: [Parameter]
   let endpoint: String
   let session: HTTPClient
   
@@ -22,7 +22,7 @@ struct TrailRequest: Request {
        // Min length? Max?
        length: TrailLengthParameter? = nil,
        session: HTTPClient = HTTPClient.sharedClient) {
-    var parameters = [String: String]()
+    var parameters = [Parameter]()
     parameters.insertParameter(page)
     parameters.insertParameter(search)
     parameters.insertParameter(difficulty)
@@ -39,13 +39,13 @@ struct TrailIdRequest: Request {
   typealias ResponseType = TrailResponse
   
   let id: Int
-  let parameters: [String : String]
+  let parameters: [Parameter]
   let endpoint: String
   let session: HTTPClient
   
   init(forId id: Int, session: HTTPClient = HTTPClient.sharedClient) {
     self.id = id
-    self.parameters = [String: String]()
+    self.parameters = [Parameter]()
     self.endpoint = "\(Endpoint.trails)\(self.id)"
     self.session = session
   }

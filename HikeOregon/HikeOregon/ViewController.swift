@@ -22,6 +22,7 @@ class ViewController: UIViewController {
       case .err(let error):
         print("RESPONSE NOT PARSED: \(error)")
       }
+      print("--------------------")
     }
     
     let idRequest = TrailIdRequest(forId: 1)
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
       case .err(let error):
         print("ID RESPONSE NOT PARSED: \(error)")
       }
+      print("--------------------")
     }
   }
 

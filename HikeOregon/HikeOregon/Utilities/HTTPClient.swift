@@ -17,11 +17,11 @@ protocol URLSessionProtocol {
 
 extension URLSession: URLSessionProtocol {
   func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
-    return (self.dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTask) as URLSessionDataTaskProtocol
+    return (self.dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTask)
   }
   
   func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
-    return (self.dataTask(with: url, completionHandler: completionHandler) as URLSessionDataTask) as URLSessionDataTaskProtocol
+    return (self.dataTask(with: url, completionHandler: completionHandler) as URLSessionDataTask)
   }
 }
 
@@ -35,7 +35,7 @@ public final class HTTPClient {
   fileprivate let session: URLSessionProtocol
   
   /**
-   Initialize a new YelpHTTPClient with the session to use for network requests
+   Initialize a new HTTPClient with the session to use for network requests
    
    - Parameter session: The session object to use to make network requests
    */

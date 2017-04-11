@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Model {
-  init?(from dict: [String: AnyObject]);
+  init?(from dict: [String: AnyObject])
 }

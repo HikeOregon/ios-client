@@ -41,6 +41,8 @@
 		0835FAE21E5A008B0029D9F0 /* ParameterMockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAE11E5A008B0029D9F0 /* ParameterMockObjects.swift */; };
 		0835FAE71E5A01460029D9F0 /* GenericParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAE61E5A01460029D9F0 /* GenericParameterTests.swift */; };
 		0835FAE91E5A23CE0029D9F0 /* Array+HikeOregon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835FAE81E5A23CE0029D9F0 /* Array+HikeOregon.swift */; };
+		08731E6A1E6611C7005D9257 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08731E691E6611C7005D9257 /* Result.swift */; };
+		08731E6D1E661A10005D9257 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08731E6C1E661A10005D9257 /* ResultTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		0835FAE11E5A008B0029D9F0 /* ParameterMockObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParameterMockObjects.swift; path = Mocks/ParameterMockObjects.swift; sourceTree = "<group>"; };
 		0835FAE61E5A01460029D9F0 /* GenericParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericParameterTests.swift; path = Requests/GenericParameterTests.swift; sourceTree = "<group>"; };
 		0835FAE81E5A23CE0029D9F0 /* Array+HikeOregon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+HikeOregon.swift"; path = "Extensions/Array+HikeOregon.swift"; sourceTree = "<group>"; };
+		08731E691E6611C7005D9257 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Utilities/Result.swift; sourceTree = "<group>"; };
+		08731E6C1E661A10005D9257 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultTests.swift; path = Utilities/ResultTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 		0835FA7F1E58B30F0029D9F0 /* HikeOregonTests */ = {
 			isa = PBXGroup;
 			children = (
+				08731E6B1E6619F4005D9257 /* Utilities */,
 				0835FAD21E58E98F0029D9F0 /* Responses */,
 				0835FAAD1E58C2140029D9F0 /* Requests */,
 				0835FAA71E58BFFD0029D9F0 /* Mocks */,
@@ -242,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				0835FAAB1E58C0D40029D9F0 /* HTTPClient.swift */,
+				08731E691E6611C7005D9257 /* Result.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -340,6 +346,14 @@
 				0835FAE61E5A01460029D9F0 /* GenericParameterTests.swift */,
 			);
 			name = Parameters;
+			sourceTree = "<group>";
+		};
+		08731E6B1E6619F4005D9257 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				08731E6C1E661A10005D9257 /* ResultTests.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,6 +495,7 @@
 			files = (
 				0835FA6E1E58B30E0029D9F0 /* ViewController.swift in Sources */,
 				0835FAC21E58CAFF0029D9F0 /* TrailResponse.swift in Sources */,
+				08731E6A1E6611C7005D9257 /* Result.swift in Sources */,
 				0835FACE1E58E56A0029D9F0 /* Endpoints.swift in Sources */,
 				0835FAAC1E58C0D40029D9F0 /* HTTPClient.swift in Sources */,
 				0835FA9B1E58B34A0029D9F0 /* Trail.swift in Sources */,
@@ -504,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08731E6D1E661A10005D9257 /* ResultTests.swift in Sources */,
 				0835FAE01E5933CE0029D9F0 /* GenericResponseTests.swift in Sources */,
 				0835FAE71E5A01460029D9F0 /* GenericParameterTests.swift in Sources */,
 				0835FAD11E58E9440029D9F0 /* Responses.swift in Sources */,

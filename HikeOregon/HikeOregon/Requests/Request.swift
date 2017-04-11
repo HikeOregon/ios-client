@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias RequestResult<T: Response> = Result<T, APIError>
+
 /**
  A type that can execute an HTTP request
  
@@ -32,6 +34,8 @@ protocol Request {
   
   /// The session used to send the request, this is mainly for mocking purposes
   var session: HTTPClient { get }
+
+  func send(completionHandler handler: @escaping (_ result: RequestResult<Self.ResponseType>) -> Void);
 }
 
 extension Request {
@@ -51,41 +55,36 @@ extension Request {
    - Parameter error: An error if one has occurred either in parsing or in sending the request, 
       otherwise nil
    */
-  func send(completionHandler handler: @escaping (_ response: Self.ResponseType?, _ error: APIError?) -> Void) {
+  func send(completionHandler handler: @escaping (_ result: RequestResult<Self.ResponseType>) -> Void) {
     guard let urlRequest = self.generateURLRequest() else {
-      handler(nil, RequestError.failedToGenerate)
+      handler(.err(RequestError.failedToGenerate))
       return
     }
     
     self.session.send(urlRequest) {(data, response, error) in
-      let finalResponse: Self.ResponseType?
-      let finalError: APIError?
+      let result: RequestResult<Self.ResponseType>
       defer {
         DispatchQueue.main.async {
-          handler(finalResponse, finalError)
+          handler(result)
         }
       }
       
       if let err = error {
-        finalResponse = nil
-        finalError = RequestError.failedToSend(err: err as NSError)
+        result = .err(RequestError.failedToSend(err: err as NSError))
         return
       }
       
       guard let jsonData = data else {
-        finalResponse = nil
-        finalError = ResponseError.noDataRecieved
+        result = .err(ResponseError.noDataRecieved)
         return
       }
       
       guard let response = Self.ResponseType(from: jsonData) else {
-        finalResponse = nil
-        finalError = ResponseError.failedToParse
+        result = .err(ResponseError.failedToParse)
         return
       }
       
-      finalResponse = response;
-      finalError = response.error;
+      result = .ok(response)
     }
   }
   

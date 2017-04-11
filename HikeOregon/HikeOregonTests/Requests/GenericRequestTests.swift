@@ -30,11 +30,9 @@ class GenericRequestTests: XCTestCase, RequestTestable {
   func test_MalformedJson_CallsbackWithParseError() {
     let expect = expectation(description: "handler called")
     self.session.nextData = Data(base64Encoded: ResponseInjections.malformedJson)
-    self.request.send {(response, error) in
-      XCTAssertNil(response)
-      XCTAssertNotNil(error)
-      
-      XCTAssertEqual(error! as! ResponseError, ResponseError.failedToParse)
+    self.request.send {(result) in
+      XCTAssert(result.isErr())
+      XCTAssertEqual(result.intoErr()! as! ResponseError, .failedToParse)
       expect.fulfill()
     }
     
@@ -43,11 +41,9 @@ class GenericRequestTests: XCTestCase, RequestTestable {
   
   func test_NoData_CallsbackWithDataError() {
     let expect = expectation(description: "handler called")
-    self.request.send {(response, error) in
-      XCTAssertNil(response)
-      XCTAssertNotNil(error)
-      
-      XCTAssertEqual(error! as! ResponseError, ResponseError.noDataRecieved)
+    self.request.send {(result) in
+      XCTAssert(result.isErr())
+      XCTAssertEqual(result.intoErr()! as! ResponseError, .noDataRecieved)
       expect.fulfill()
     }
     
@@ -57,11 +53,9 @@ class GenericRequestTests: XCTestCase, RequestTestable {
   func test_MalformedURL_CallsbackWithRequestError() {
     let expect = expectation(description: "handler called")
     self.request = MockRequest(endpoint: "<~>", session: self.session)
-    self.request.send {(response, error) in
-      XCTAssertNil(response)
-      XCTAssertNotNil(error)
-      
-      XCTAssertEqual(error! as! RequestError, RequestError.failedToGenerate)
+    self.request.send {(result) in
+      XCTAssert(result.isErr())
+      XCTAssertEqual(result.intoErr()! as! RequestError, .failedToGenerate)
       expect.fulfill()
     }
     
@@ -72,11 +66,9 @@ class GenericRequestTests: XCTestCase, RequestTestable {
     let expect = expectation(description: "handler called")
     let mockError = NSError(domain: "mock", code: 0, userInfo: nil)
     self.session.nextError = mockError
-    self.request.send {(response, error) in
-      XCTAssertNil(response)
-      XCTAssertNotNil(error)
-      
-      XCTAssertEqual(error! as! RequestError, RequestError.failedToSend(err: mockError))
+    self.request.send {(result) in
+      XCTAssert(result.isErr())
+      XCTAssertEqual(result.intoErr()! as! RequestError, .failedToSend(err: mockError))
       expect.fulfill()
     }
     
